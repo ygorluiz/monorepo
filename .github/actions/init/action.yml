@@ -1,0 +1,29 @@
+# name: 'Init'
+name: 'Init'
+description: 'Localized Init'
+author: 'Ygor'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'pnpm'
+      id: pnpm-setup
+      uses: pnpm/action-setup@v2.2.4
+      with:
+        version: 7
+
+    - name: 'Node'
+      id: node-setup
+      uses: actions/setup-node@v3
+      with:
+        # architecture: 'x64'
+        cache-dependency-path: pnpm-lock.yaml
+        registry-url: 'https://registry.npmjs.org'
+        cache: 'pnpm'
+        node-version: 16
+
+    - name: Setup Git User
+      shell: bash
+      run: |
+        git config --global user.email "ygorluiz@me.com"
+        git config --global user.name "ygorluiz"

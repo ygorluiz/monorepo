@@ -1,25 +1,28 @@
-<!--
-Thanks for opening a PR! Your contribution is much appreciated.
-To make sure your PR is handled as smoothly as possible we request that you follow the checklist sections below.
-Choose the right checklist for the change that you're making:
+<!---
+Thanks for creating a Pull Request 💖!
+
+Please read the following before submitting:
+- PRs that adds new external dependencies might take a while to review.
+- Keep your PR as small as possible.
+- Limit your PR to one type (docs, feature, refactoring, ci, or bugfix)
 -->
 
-## Bug
+Closes # <!-- Github issue # here -->
 
-- [ ] Related issues linked using `fixes #number`
-- [ ] Integration tests added
-- [ ] Errors have a helpful link attached, see `contributing.md`
+## 📝 Description
 
-## Feature
+> Add a brief description
 
-- [ ] Implements an existing feature request or RFC. Make sure the feature request has been accepted for implementation before opening a PR.
-- [ ] Related issues linked using `fixes #number`
-- [ ] Integration tests added
-- [ ] Documentation added
-- [ ] Telemetry added. In case of a feature if it's used or not.
-- [ ] Errors have a helpful link attached, see `contributing.md`
+## ⛳️ Current behavior (updates)
 
-## Documentation / Examples
+> Please describe the current behavior that you are modifying
 
-- [ ] Make sure the linting passes by running `pnpm build && pnpm lint`
-- [ ] The "examples guidelines" are followed from [our contributing doc](https://github.com/vercel/next.js/blob/canary/contributing/examples/adding-examples.md)
+## 🚀 New behavior
+
+> Please describe the behavior or changes this PR adds
+
+## 💣 Is this a breaking change (Yes/No):
+
+<!-- If Yes, please describe the impact and migration path for existing Chakra users. -->
+
+## 📝 Additional Information

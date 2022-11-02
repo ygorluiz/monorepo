@@ -1,0 +1,13 @@
+# name: 'Install'
+name: 'Install'
+description: 'Localized Install'
+author: 'Ygor'
+
+runs:
+  using: 'composite'
+  steps:
+    - name: 'Dependencies'
+      id: dependencies
+      shell: bash
+      run: |
+        pnpm install --frozen-lockfile

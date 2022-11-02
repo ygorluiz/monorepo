@@ -1,0 +1,63 @@
+{
+  "name": "nextjs-project",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "pnpm lerna clean -y && pnpm lerna bootstrap && pnpm lerna exec 'rm -rf ./dist'",
+    "build": "turbo run build",
+    "lerna": "lerna",
+    "dev": "turbo run dev --parallel",
+    "test-types": "pnpm tsc",
+    "git-reset": "git reset --hard HEAD",
+    "git-clean": "git clean -d -x -e node_modules -e packages -f",
+    "lint-typescript": "turbo run typescript",
+    "lint-eslint": "eslint . --ext js,jsx,ts,tsx --max-warnings=0 --config .eslintrc.json --no-eslintrc",
+    "lint-no-typescript": "run-p prettier-check lint-eslint",
+    "lint": "run-p test-types lint-typescript prettier-check lint-eslint lint-language",
+    "lint-fix": "pnpm prettier-fix && eslint . --ext js,jsx,ts,tsx --fix --max-warnings=0 --config .eslintrc.json --no-eslintrc",
+    "lint-language": "alex .",
+    "prettier-check": "prettier --check .",
+    "prettier-fix": "prettier --write .",
+    "types": "lerna run types --stream",
+    "typescript": "turbo run typescript",
+    "prepublishOnly": "turbo run build",
+    "publish-canary": "git checkout canary && git pull && lerna version prerelease --preid canary --force-publish && release --pre --skip-questions",
+    "publish-stable": "lerna version --force-publish",
+    "lint-staged": "lint-staged",
+    "version": "pnpm install && git add pnpm-lock.yaml",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@types/jest": "29.2.0",
+    "@types/node": "18.11.7",
+    "@types/node-fetch": "2.6.2",
+    "@typescript-eslint/eslint-plugin": "5.41.0",
+    "@typescript-eslint/parser": "5.41.0",
+    "alex": "10.0.0",
+    "eslint": "8.26.0",
+    "eslint-config-next": "workspace:*",
+    "eslint-plugin-eslint-plugin": "5.0.6",
+    "eslint-plugin-import": "2.26.0",
+    "eslint-plugin-jest": "27.1.3",
+    "eslint-plugin-react": "7.31.10",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "husky": "8.0.1",
+    "jest": "29.2.2",
+    "jest-extended": "3.1.0",
+    "lerna": "6.0.1",
+    "lint-staged": "13.0.3",
+    "node-fetch": "3.2.10",
+    "prettier": "2.7.1",
+    "semver": "7.3.8",
+    "turbo": "1.6.2",
+    "typescript": "4.8.4"
+  },
+  "resolutions": {},
+  "engines": {
+    "node": ">=14.6.0"
+  },
+  "packageManager": "pnpm@7.3.0"
+}
